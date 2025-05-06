@@ -1,4 +1,9 @@
-wheel==0.43.0
-Django>=4.0
-gunicorn
-psycopg2-binary
+asgiref==3.8.1
+Django==5.2
+django-markdown==0.8.4
+importlib_metadata==8.7.0
+Markdown==3.8
+pillow==11.2.1
+python-dotenv==1.1.0
+sqlparse==0.5.3
+zipp==3.21.0
