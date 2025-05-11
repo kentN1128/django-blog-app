@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="row">
-    <div class = "col-9">
+    <div class="col-lg-9 col-12">
         <div class="col-md-11 mx-auto">
          {% if category %}
         <h1>{{ category }}<i>-category-</i></h1>
@@ -21,7 +21,7 @@
         {% for Post in object_list %}
             {% if Post.is_published or user.is_authenticated %}
             <div class="col-md-10">
-             <div class="card flex-md-row mb-2 box-shadow h-md-200">
+             <div class="card flex-column flex-md-row mb-2 box-shadow h-md-200">
                 <div class="card-body d-flex flex-column align-items-start">
                      <strong class="d-inline-block mb-2 text-success">
                          {% if not Post.is_published%}
@@ -29,23 +29,23 @@
                          {% endif %}
                         {{Post.category}}
                     </strong>
-                    <h3 class="mb-0">
+                    <h4 class="mb-4">
                      <a class="text-dark">{{ Post.title }}</a>
-                    </h3>
+                    </h4>
                     <div class="mb-1 text-muted">{{ Post.updated_at|date }}
                     </div>
                     <p class="card-text mb-auto">{{ Post.convert_markdown_to_html|striptags|truncatechars:30}}</p>
                     <a class="stretched-link" href="{% url 'post-detail' Post.pk %}" >続きを読む</a>
                 </div>
                 {% if Post.image %}
-                    <img src="{{ Post.image.url }}" alt="{{ Post.title }}" width="300" height="250">
+                 <img src="{{ Post.image.url }}" alt="{{ Post.title }}" class="img-fluid" style="max-height:250px; object-fit:cover;">
                  {% else %}
-                    <svg class="bd-placeholder-img" width="300" height="250" xmlns="http://www.w3.org/2000/svg"
-                        role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
-                        focusable="false">
-                        <rect width="100%" height="100%" fill="#55595c" />
-                        <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                    </svg>
+                    <svg class="bd-placeholder-img img-fluid" style="max-height:250px;" xmlns="http://www.w3.org/2000/svg"
+                    role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                    focusable="false">
+                    <rect width="100%" height="100%" fill="#55595c" />
+                    <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+                     </svg>
                  {% endif %}
                 </div>
              </div>
@@ -54,7 +54,7 @@
         {% include "blog/snippets/pagination.html" %}
         </div>
     </div>
-    <div class="col-3">
+    <div class="col-lg-3 col-12 mt-4 mt-lg-0">
     {% include "blog/snippets/sidebar.html" %}
     </div>
 </div>

@@ -25,7 +25,7 @@ load_dotenv(BASE_DIR/".env")
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'Niiino.pythonanywhere.com']
 
@@ -121,9 +121,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_ROOT = BASE_DIR/"static"
-STATIC_URL = "static/"
-MEDIA_ROOT = BASE_DIR / 'media/'
-MEDIA_URL = '/media/'
+STATIC_URL = "/static/"
+MEDIA_ROOT = BASE_DIR /"media"
+MEDIA_URL = "/media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
