@@ -1,14 +1,14 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 <div class="row mb-5">
-    <div class="col-9">
+    <div class="col-lg-9 col-12">
         <div class="coi-md-11 mx-auto">
           <div class="article-area">
            <h1>{{ object.title }}</h1>
               <p>
-                   {% if not Post.is_published%}
+                  {% if not object.is_published %}
                         <span class="badge bg-danger">下書き</span>
-                    {% endif %}
+                  {% endif %}
                   <span class="badge bg-secondary">{{object.category}}</span>
                   <small class="ps-1">
                     <i class="fa-solid fa-pencil"></i>{{ object.created_at|date }} |
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <div class="col-3">
+    <div class="col-lg-3 col-12 mt-4 mt-lg-0">
         {% include "blog/snippets/sidebar.html" %}
     </div>
 </div>
