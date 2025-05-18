@@ -1,7 +1,8 @@
-
-<nav class="navbar navbar-expand-lg navbar-light shadow-sm p-3 mb-5 rounded">
+{% load static %}
+<nav class="bg-light navbar navbar-expand-lg navbar-light shadow-sm p-3 mb-5 rounded">
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'post-list' %}">Niiinoブログ</a>
+    <img src="{% static 'blog/images/Logo.png' %}" style="width: 200px; height: 150px;" class="float-start img-fluid" alt="ホームロゴ">
       <form action="{% url 'search-post-list'%}"  method="GET" class="d-flex" >
         <input class="form-control me-2" type="text" name='query' placeholder="キーワードを入力" value="{{ query }}">
         <input class="btn btn-outline-success" type="submit" value="検索">
