@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "blog.apps.BlogConfig",
-    "markdownx"
+    "markdownx",
 ]
 
 MIDDLEWARE = [
@@ -129,3 +129,10 @@ MEDIA_URL = "/media/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+MARKDOWNX_MARKDOWN_EXTENSIONS = [
+    'fenced_code', # コードブロック
+    'tables', # テーブル
+    'toc', # 目次
+    'nl2br', # 改行
+]
